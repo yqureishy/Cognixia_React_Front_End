@@ -1,5 +1,5 @@
- 
-// a function that will take in an array and a size
+
+ // a function that will take in an array and a size
 // this will turn the array of restaurants into a format
 // where each row will have two restaurants / the first item will be an array
 //                                            of two restaurant objects

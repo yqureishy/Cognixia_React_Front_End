@@ -1,3 +1,4 @@
+
 import React from "react";
 import CardLayout from "./CardLayout";
 
@@ -13,5 +14,6 @@ function CardInterface(props){
     )
 
 }
+
 
 export default CardInterface;
