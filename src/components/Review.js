@@ -31,7 +31,7 @@ function Body(props){
 function Footer(props) {
     return(
         <div className="card-footer">
-            <h4>{props.rating}</h4>
+            <h4>{props.rating}/5 Stars</h4>
         </div>
     )
 }

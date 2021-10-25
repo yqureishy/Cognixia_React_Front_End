@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './App.css';
 import CardInterface from './components/CardInterface';
+import NavigationBar from './components/NavigationBar';
 
 
 function App() {
@@ -66,14 +67,22 @@ function App() {
 
   const [cardId, setCardId] = useState('');
   const [review, setReview] = useState(false);
+  const [search, setSearch] = useState('');
+  const [searching, setSearching] = useState(false);
 
   const findReviews = (cardId, reviewState) => {
     setCardId(cardId)
     setReview(reviewState);
   }
 
+  const searchFor = (searchValue, searchState) => {
+    setSearch(searchValue);
+    setSearching(searchState);
+  }
+
   return (
     <div className="container-fluid">
+      <NavigationBar search={searchFor}/>
       {!review && <CardInterface findReviews={findReviews} restaurant={testingData} />}
       {review && <CardInterface cardId={cardId} findReviews={testingReview} />}
     </div>
