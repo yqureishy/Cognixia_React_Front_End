@@ -5,6 +5,7 @@ const baseurl = 'http://127.0.0.1:8080';
 
 // custom hook for performing GET request
 export const FetchRestaurants = (searchMethod, searchValue) => {
+
   let param = 0;
 
   if (searchValue !== undefined) param = searchValue;
@@ -47,14 +48,15 @@ export const FetchRestaurants = (searchMethod, searchValue) => {
   return { loading, data };
 };
 
+
 export const FetchReviews = (searchMethod, searchValue) => {
+
   let param = 0;
 
   if (searchValue !== undefined) param = searchValue;
 
+  const getById = `${baseurl}/api/Reviews/` + param;
 
-  const getById = `${baseurl}/api/restaurants/` + param;
-  let url = null;
 
   switch (searchMethod) {
     case 'getById': url = getById;

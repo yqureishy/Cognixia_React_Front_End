@@ -28,7 +28,6 @@ function CardLayout(props){
     const makeDecks = (input, size) => {
         return cardGrouping(input, size);
     }
-    
     return(
 
         <div className='pt-3'>
@@ -42,6 +41,7 @@ function CardLayout(props){
                                                          handleRestaurantUpdate={props.handleRestaurantUpdate}/>)}
                 </div>
             ))}
+
             {reviewValue === null && !Array.isArray(restaurants) 
                 && <h3>There are no restaurants</h3>}
 

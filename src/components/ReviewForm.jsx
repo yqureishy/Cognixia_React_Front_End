@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 
-
 class ReviewForm extends Component {
 
     constructor(props) {
