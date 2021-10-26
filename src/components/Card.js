@@ -1,4 +1,6 @@
 import React from "react";
+import FormModalRestaurants from "./FormModelRestaurants";
+
 
 function Card (props){
 
@@ -16,6 +18,11 @@ function Card (props){
             <Header name={props.info.name} />
             <Body rating ={props.info.rating} address={props.info.address} 
                             phone={props.info.phone} description={props.info.description} />
+            { props.role === 'admin' ? <Footer cardID={'card' + this.props.info.id}
+                                                restaurant={props.info} 
+                                                handleRestaurantDelete={props.handleRestaurantDelete}
+                                                handleRestaurantUpdate={props.handleRestaurantUpdate}/> : <div></div>
+            }
         </div>
     );
 }
@@ -37,6 +44,15 @@ function Body(props) {
             <p>{props.description}</p>
         </div>
     );
+}
+
+function Footer(props){
+    return(
+        <div className="card-footer btn-group">
+            <button className="btn btn-danger" onClick={props.handleRestaurantDelete(props.id)}>DELETE</button>
+            <FormModalRestaurants type='update' restaurant={props.restaurant} handleUpdate={props.handleUpdate}/>
+        </div>
+    )
 }
 
 export default Card;
